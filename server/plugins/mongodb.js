@@ -1,7 +1,6 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-require("dotenv").config();
 
 const {
     DATABASE_USERNAME,
