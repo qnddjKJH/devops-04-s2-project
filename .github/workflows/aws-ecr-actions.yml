@@ -1,11 +1,13 @@
 name: Deploy Docker Image to Amazone ECR
 
+# Release 또는 tag(x.x 형식의 tag) 가 push 되는 경우
+# Docker Image Build 및 AWS ECR push
 on:
   release:
     types: [published]
   push:
     tags:
-      - *.*.*
+      - '[0-9].[0-9]'
       
 jobs:
   push_to_registry:
