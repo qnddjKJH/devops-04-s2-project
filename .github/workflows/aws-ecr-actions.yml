@@ -34,6 +34,7 @@ jobs:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: aws-dp-server
           IMAGE_TAG: ${{ steps.release_tag.outputs.tag }}
+        working-directory: ./server
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ./server
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
